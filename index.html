@@ -17,12 +17,12 @@
 
     <main>
         <div class="container" id="app">
-            <input type="text" name="" id="">
+            <input type="text" v-model="newtodo">
             <button>Aggiorna</button>
 
             <ul>
                 <li>
-                    List item
+                    {{newtodo}}
                 </li>
             </ul>
 
@@ -32,6 +32,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="js/main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

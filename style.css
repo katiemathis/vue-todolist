@@ -14,5 +14,12 @@ header {
     width: 80%;
     text-align: center;
     margin: auto;
+    padding: 20px;
+}
+
+ul {
+    width: 50%;
+    margin: 20px auto;
+    text-align: left;
 }
 
