@@ -5,33 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>To Do List</title>
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div id="app">
+        <header>
+            <div class="container">
+                <h1>TO DO LIST</h1>
+            </div>
 
-        </div>
+        </header>
 
-    </header>
+        <main>
+            <div class="add-todo container">
+                <h3>Aggiungi un "to do"</h3>
+                <input type="text" v-model="newtodo" @keyup.enter="addToDo">
+                <button @click="addToDo">Aggiungi</button>
+                <div class="todo-list">
+                    <ul v-if="todos.length > 0">
+                        <li v-for="(todo, index) in todos" :done="done" :class="doneClass">
+                            <span @click="doneTask(index)">{{todo}}</span>
+                            <i class="fa-solid fa-xmark" @click="removeToDo(index)"></i>
+                        </li>
 
-    <main>
-        <div class="container" id="app">
-            <input type="text" v-model="newtodo">
-            <button>Aggiorna</button>
+                    </ul>
+                    <ul v-else>
+                        <h3>Non ci sono elementi nella lista</h3>
+                    <ul>
+                </div>
 
-            <ul>
-                <li>
-                    {{newtodo}}
-                </li>
-            </ul>
+            </div>
 
-        </div>
+        </main>
 
-    </main>
-
-
+    </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="main.js"></script>
+    
 </body>
 </html>

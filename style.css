@@ -7,7 +7,12 @@
 header {
     width: 100%;
     min-height: 70px;
-    background-color: aqua;
+    background-color: lightblue;
+    color: white;
+}
+
+h3 {
+    margin-bottom: 20px;
 }
 
 .container {
@@ -17,9 +22,35 @@ header {
     padding: 20px;
 }
 
-ul {
+.todo-list ul {
     width: 50%;
     margin: 20px auto;
     text-align: left;
+    list-style: none;
 }
+
+.todo-list ul li {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.doneClass {
+    text-decoration: line-through;
+}
+
+.todo-list ul li i {
+    float: right;
+   
+}
+
+.todo-list ul li:hover {
+    cursor: pointer;
+    background-color: lightcyan;
+}
+
+
+
+
+
 
