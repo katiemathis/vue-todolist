@@ -20,7 +20,7 @@ const app = new Vue (
             removeToDo(index) {
                 this.todos.splice(index, 1);
             },
-            doneTask(index) {
+            /*doneTask(index) {
                 if (this.done == false) {
                     this[index]this.doneClass = 'doneClass';
                     this.done = true;
@@ -28,7 +28,7 @@ const app = new Vue (
                     this[index]this.doneClass = ''
                 }
 
-            }
+            }*/
 
         }
 
