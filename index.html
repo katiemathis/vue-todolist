@@ -23,15 +23,22 @@
                 <input type="text" v-model="newtodo" @keyup.enter="addToDo">
                 <button @click="addToDo">Aggiungi</button>
                 <div class="todo-list">
+                    <ul>
+                        <li>
+                            <p id="instruction-1">Clicca per segnalare che il to-do è stato completato</span>
+                            <p id="instruction-2">Clicca per rimuovere to-do dalla lista</p>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
                     <ul v-if="todos.length > 0">
-                        <li v-for="(todo, index) in todos">
+                        <li v-for="(todo, index) in todos" class="todos">
                             <span @click="doneTask(index)" :class="(todo.done==true)?'doneClass':''">{{todo.text}}</span>
                             <i class="fa-solid fa-xmark" @click="removeToDo(index)"></i>
                         </li>
 
                     </ul>
                     <ul v-else>
-                        <h3>Non ci sono elementi nella lista</h3>
+                        <h3>Non hai niente da fare oggi</h3>
                     <ul>
                 </div>
 
