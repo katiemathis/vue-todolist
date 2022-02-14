@@ -24,8 +24,8 @@
                 <button @click="addToDo">Aggiungi</button>
                 <div class="todo-list">
                     <ul v-if="todos.length > 0">
-                        <li v-for="(todo, index) in todos" :done="done" :class="doneClass">
-                            <span @click="doneTask(index)">{{todo}}</span>
+                        <li v-for="(todo, index) in todos">
+                            <span @click="doneTask(index)" :class="(todo.done==true)?'doneClass':''">{{todo.text}}</span>
                             <i class="fa-solid fa-xmark" @click="removeToDo(index)"></i>
                         </li>
 

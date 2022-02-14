@@ -4,31 +4,32 @@ const app = new Vue (
         data: {
             newtodo: '',
             todos: [
-                'pick up tomatoes',
-                'buy cherries',
-                'finish homework',
-                'order new running shoes'
+                {
+                    text: 'pick up new running shoes',
+                    done: false,
+                },
             ],
-            doneClass: '',
-            done: false,
         },
         methods: {
             addToDo() {
-                this.todos.push(this.newtodo);
-                this.newtodo = '';
+                if (this.newtodo.trim().length > 0) {
+                const newTodoOb = {
+                    text: this.newtodo.trim(),
+                    done: false
+                };
+                
+                    this.todos.push(newTodoOb);
+                    this.newtodo = ''
+                }
+
             },
             removeToDo(index) {
                 this.todos.splice(index, 1);
             },
-            /*doneTask(index) {
-                if (this.done == false) {
-                    this[index]this.doneClass = 'doneClass';
-                    this.done = true;
-                } else {
-                    this[index]this.doneClass = ''
-                }
+            doneTask(index) {
+                this.todos[index].done = !this.todos[index].done;
 
-            }*/
+            }
 
         }
 
@@ -36,8 +37,3 @@ const app = new Vue (
 )
 
 
-/*if (this.done == false) {
-    this.doneClass.splice(index, 1) = 'doneClass';
-} else {
-    
-}*/
